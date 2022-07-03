@@ -1,0 +1,17 @@
+commit e46d2d19f7e8028329b053fbe4fa384549408118
+Author: Andres Sevillano <andres.sevillano.net@gmail.com>
+Date:   Sat Jul 2 23:15:48 2022 -0500
+
+    Added JS and Fixed Index.html
+
+commit c28681d83b7a4bc8dbe99adc6cc1b45b051e6656
+Author: Andres Sevillano <andres.sevillano.net@gmail.com>
+Date:   Sat Jul 2 21:38:57 2022 -0500
+
+    Updated CSS in Square resize in screen bellow 600px
+
+commit b0ad7b7b34f66ab0f75ebb91dffcb3ee807a7caf
+Author: Andres Sevillano <andres.sevillano.net@gmail.com>
+Date:   Sat Jul 2 21:27:47 2022 -0500
+
+    Initialized SimonSay with layout

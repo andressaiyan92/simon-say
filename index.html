@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon -->
     <link rel="icon" href="resources/images/favicon.png">
 </head>
@@ -28,16 +31,15 @@
             </a>
 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="https://andressaiyan92.github.io/" class="nav-link custom-link">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link custom-link">Proyectos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link custom-link">Preguntas Frecuentes</a></li>
+                <li class="nav-item"><a href="#" class="nav-link custom-link">Acerca de</a></li>
             </ul>
         </header>
     </div>
     <div class="container mb-4">
-        <div class="row">
+        <div class="row gy-5">
             <!-- Game -->
             <div class="col-sm-8 text-center">
                 <div class="title">
@@ -49,23 +51,45 @@
                         <div class="square yellow"></div>
                         <div class="square blue"></div>
                         <div class="square green"></div>
-                    </div> 
+                    </div>
                 </div>
-                <div class="text-lg-start">
+                <div class="text-lg-start text-sm-center">
                     <button id="startButton">Iniciar el juego</button>
                 </div>
             </div>
             <!-- Stadistics -->
             <div class="col-sm-4">
+                <h2 class="text-center">Marcador 🎲</h2>
                 <div class="round mt-5">
                     <h2 id="round"></h2>
                 </div>
             </div>
         </div>
     </div>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 mx-2 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+            </a>
+            <span class="mb-3 mb-md-0 custom-link">© <span id="copyData"></span></span>
+        </div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="custom-link" href="https://www.linkedin.com/in/andres-sevillano-molina-551626203/" target="_blank"><i class="fa-brands fa-linkedin display-5"></i>
+                        <use xlink:href="#twitter"></use>
+                    </svg></a></li>
+            <li class="ms-3"><a class="custom-link" href="https://github.com/andressaiyan92" target="_blank"><i class="fa-brands fa-github-alt display-5"></i>
+                        <use xlink:href="#instagram"></use>
+                    </svg></a></li>
+            <li class="ms-3"><a class="custom-link" href="https://twitter.com/Andres_Z1992/with_replies" target="_blank"><i class="fa-brands fa-twitter display-5" width="24"
+                        height="24"></i></a></li>
+        </ul>
+    </footer>
 
     <!-- JS -->
     <script src="js/game.js"></script>
+    <script src="js/info.js"></script>
 </body>
 
 </html>

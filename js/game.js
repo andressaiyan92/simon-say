@@ -25,7 +25,7 @@ class simon{
         ];
     }
 
-    init(){
+    init(){ 
         this.display.startButton.onclick = () => this.startGame();
     }
 
@@ -110,10 +110,12 @@ class simon{
     }
 
     gameWon(){
-        this.display.startButton.disabled = true;
+        this.updateRound("Felicidades haz ganado 🎉");
+        this.display.startButton.disabled = false;
+        this.blockedButtons = true;
         this.winSound.play();
         this.buttons.forEach((element) => element.classList.add("winner")); 
-        this.updateRound("Felicidades haz ganado 🎉");
+        
     }
 
 }

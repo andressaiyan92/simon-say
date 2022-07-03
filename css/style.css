@@ -84,3 +84,12 @@
         transform: rotate(180deg);
     }
 }
+
+.custom-link{
+    color: #8c2020 !important;
+}
+
+.active-button{
+    background-color: #911f1f !important;
+    color: #fff !important;
+}
