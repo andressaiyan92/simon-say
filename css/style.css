@@ -1,18 +1,17 @@
-
-.simon{
+.simon {
     margin-top: 50px;
     padding: 10px;
     border-radius: 5px;
 }
 
-.buttonContainer{
+.buttonContainer {
     display: inline-grid;
     grid-gap: 10px;
     grid-template-columns: auto auto;
     transform: rotate(45deg);
 }
 
-.square{
+.square {
     border-radius: 5px;
     width: 150px;
     height: 150px;
@@ -20,76 +19,102 @@
 }
 
 @media screen and (max-width: 600px) {
-    .square{
+    .square {
         width: 100px;
         height: 100px;
     }
 }
-    
+
 
 .square:active,
-.active{
+.active {
     filter: brightness(200%);
 }
 
-.red{
+.red {
     background-color: #c72020;
 }
 
-.green{
+.green {
     background-color: green;
 }
 
-.blue{
+.blue {
     background-color: #313191;
 }
 
-.yellow{
+.yellow {
     background-color: #cece3a;
 }
 
-#startButton{
+#startButton {
     margin-top: 5rem;
-    width: 120px;
+    width: 150px;
     height: 75px;
     border: none;
-    font-family: 'Merriweather', serif; 
     cursor: pointer;
     border-radius: 5px;
     color: #fff;
-    background-color: #5c5172;
+    background-color: #cd1b1b;
     padding: 5px;
 }
 
-#startButton:hover{
+#startButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-family: 'Merriweather', serif;
+    transition: 0.5s;
+}
+
+#startButton span:after {
+    content: '🎮';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#startButton:hover span {
+    padding-right: 25px;
+}
+
+#startButton:hover {
     filter: brightness(125%);
 }
 
-#startButton:disabled{
+#startButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+#startButton:disabled {
     background-color: #9c9c9c;
     cursor: not-allowed;
     filter: brightness(75%);
 }
 
-.title{
+.title {
     margin-bottom: 3.5rem;
 }
 
-.winner{
+.winner {
     animation: spin 1s ease-in-out;
 }
 
-@keyframes spin{
-    100%{
+@keyframes spin {
+    100% {
         transform: rotate(180deg);
     }
 }
 
-.custom-link{
+.custom-link {
     color: #8c2020 !important;
 }
 
-.active-button{
+.active-button {
     background-color: #911f1f !important;
     color: #fff !important;
 }
