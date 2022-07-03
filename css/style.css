@@ -19,6 +19,14 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 600px) {
+    .square{
+        width: 100px;
+        height: 100px;
+    }
+}
+    
+
 .square:active,
 .active{
     filter: brightness(200%);
