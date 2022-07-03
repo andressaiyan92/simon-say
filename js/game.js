@@ -1,9 +1,13 @@
+/*
+    Author: Sevillano Molina Andrés.
+*/
+
 let round = document.getElementById("round");
 let simonButtons = document.getElementsByClassName("square");
 let startButton = document.getElementById("startButton");
 
-class simon{
-    constructor(simonButtons, startButton, round){
+class simon {
+    constructor(simonButtons, startButton, round) {
         this.round = 0;
         this.userPosition = 0;
         this.totalRounds = 10;
@@ -15,6 +19,7 @@ class simon{
             startButton,
             round,
         }
+        this.startSound = new Audio("./resources/sounds/start.wav");
         this.errorSound = new Audio("./resources/sounds/error.wav");
         this.winSound = new Audio("./resources/sounds/win.wav");
         this.buttonsSound = [
@@ -25,97 +30,98 @@ class simon{
         ];
     }
 
-    init(){ 
+    init() {
         this.display.startButton.onclick = () => this.startGame();
     }
 
-    startGame(){
+    startGame() {
+        this.startSound.play();
         this.display.startButton.disabled = true;
         this.updateRound(0);
         this.userPosition = 0;
         this.sequence = this.createSequence();
-        this.buttons.forEach((element, i)=> {
+        this.buttons.forEach((element, i) => {
             element.classList.remove("winner");
             element.onclick = () => this.buttonClick(i);
         });
         this.showSequence();
     }
 
-    updateRound(value){
+    updateRound(value) {
         this.round = value;
         this.display.round.textContent = `Round: ${this.round}`;
     }
 
-    createSequence(){
-        return Array.from({length: this.totalRounds}, () => this.getRandomColor());
+    createSequence() {
+        return Array.from({ length: this.totalRounds }, () => this.getRandomColor());
     }
 
-    getRandomColor(){
+    getRandomColor() {
         return Math.floor(Math.random() * 4);
     }
 
-    buttonClick(value){
+    buttonClick(value) {
         !this.blockedButtons && this.validateChosenColor(value);
     }
 
-    validateChosenColor(value){
-        if(this.sequence[this.userPosition] === value){
+    validateChosenColor(value) {
+        if (this.sequence[this.userPosition] === value) {
             this.buttonsSound[value].play();
-            if(this.round === this.userPosition){
+            if (this.round === this.userPosition) {
                 this.updateRound(this.round + 1);
                 this.speed /= 1.02;
                 this.isGameOver();
-            }else{
+            } else {
                 this.userPosition++;
             }
-        }else{
+        } else {
             this.gameLost();
         }
     }
 
-    isGameOver(){
-        if(this.round === this.totalRounds){
+    isGameOver() {
+        if (this.round === this.totalRounds) {
             this.gameWon();
-        }else{
+        } else {
             this.userPosition = 0;
             this.showSequence();
         }
     }
 
-    showSequence(){
+    showSequence() {
         this.blockedButtons = true;
         let sequenceIndex = 0;
         let timer = setInterval(() => {
             const button = this.buttons[this.sequence[sequenceIndex]];
             this.buttonsSound[this.sequence[sequenceIndex]].play();
             this.toggleButtonStyle(button);
-            setTimeout(() => this.toggleButtonStyle(button), this.speed /2);
+            setTimeout(() => this.toggleButtonStyle(button), this.speed / 2);
             sequenceIndex++;
-            if(sequenceIndex > this.round){
+            if (sequenceIndex > this.round) {
                 this.blockedButtons = false;
                 clearInterval(timer);
             }
         }, this.speed);
     }
 
-    toggleButtonStyle(button){
+    toggleButtonStyle(button) {
         button.classList.toggle("active");
     }
 
-    gameLost(){
+    gameLost() {
         this.errorSound.play();
         this.display.startButton.disabled = false;
         this.blockedButtons = true;
         this.updateRound("Intentalo nuevamente 😨");
     }
 
-    gameWon(){
+    gameWon() {
         this.updateRound("Felicidades haz ganado 🎉");
         this.display.startButton.disabled = false;
         this.blockedButtons = true;
         this.winSound.play();
-        this.buttons.forEach((element) => element.classList.add("winner")); 
-        
+        this.buttons.forEach((element) => element.classList.add("winner"));
+
     }
 
 }
