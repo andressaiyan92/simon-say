@@ -67,6 +67,8 @@
 
 #startButton:disabled{
     background-color: #9c9c9c;
+    cursor: not-allowed;
+    filter: brightness(75%);
 }
 
 .title{
